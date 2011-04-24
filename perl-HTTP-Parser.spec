@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 3
 
 Summary:    Parse HTTP/1.1 request into HTTP::Request/Response object
 License:    GPL+ or Artistic
