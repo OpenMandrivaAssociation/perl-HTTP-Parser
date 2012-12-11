@@ -1,22 +1,22 @@
 %define upstream_name    HTTP-Parser
 %define upstream_version 0.06
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 3
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	4
 
-Summary:    Parse HTTP/1.1 request into HTTP::Request/Response object
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/HTTP/%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	Parse HTTP/1.1 request into HTTP::Request/Response object
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/HTTP/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(HTTP::Request)
-BuildRequires: perl(HTTP::Response)
-BuildRequires: perl(Test::More)
-BuildRequires: perl(URI)
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-devel
+BuildRequires:	perl(HTTP::Request)
+BuildRequires:	perl(HTTP::Response)
+BuildRequires:	perl(Test::More)
+BuildRequires:	perl(URI)
+BuildArch:	noarch
 
 %description
 This is an HTTP request parser. It takes chunks of text as received and
@@ -33,24 +33,34 @@ new ( named params... )
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
 %make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc META.yml README Changes
 %{_mandir}/man3/*
-%perl_vendorlib/*
+%{perl_vendorlib}/*
 
+%changelog
+* Sun Apr 24 2011 Funda Wang <fwang@mandriva.org> 0.60.0-3mdv2011.0
++ Revision: 658281
+- rebuild
+
+* Sat Apr 23 2011 Funda Wang <fwang@mandriva.org> 0.60.0-2
++ Revision: 657441
+- rebuild for updated spec-helper
+
+* Thu Mar 10 2011 Guillaume Rousse <guillomovitch@mandriva.org> 0.60.0-1
++ Revision: 643382
+- update to new version 0.06
+
+* Sat Dec 25 2010 Shlomi Fish <shlomif@mandriva.org> 0.50.0-1mdv2011.0
++ Revision: 624762
+- import perl-HTTP-Parser
 
