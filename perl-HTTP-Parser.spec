@@ -2,14 +2,14 @@
 %define upstream_version 0.06
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	6
+Version:	%{upstream_version}
+Release:	7
 
 Summary:	Parse HTTP/1.1 request into HTTP::Request/Response object
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/HTTP/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://metacpan.org/dist/HTTP-Parser
+Source0:	https://cpan.metacpan.org/authors/id/E/ED/EDECA/HTTP-Parser-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
