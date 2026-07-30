@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	0.06
-Release:	3
+Release:	4
 
 Summary:	Parse HTTP/1.1 request into HTTP::Request/Response object
 License:	GPL+ or Artistic
