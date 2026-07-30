@@ -3,13 +3,13 @@
 
 Name:		perl-%{upstream_name}
 Version:	%{upstream_version}
-Release:	7
+Release:	1
 
 Summary:	Parse HTTP/1.1 request into HTTP::Request/Response object
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/HTTP-Parser
-Source0:	https://cpan.metacpan.org/authors/id/E/ED/EDECA/HTTP-Parser-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/E/ED/EDECA/HTTP-Parser-0.06.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -47,21 +47,4 @@ perl Makefile.PL INSTALLDIRS=vendor
 %doc META.yml README Changes
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
-
-%changelog
-* Sun Apr 24 2011 Funda Wang <fwang@mandriva.org> 0.60.0-3mdv2011.0
-+ Revision: 658281
-- rebuild
-
-* Sat Apr 23 2011 Funda Wang <fwang@mandriva.org> 0.60.0-2
-+ Revision: 657441
-- rebuild for updated spec-helper
-
-* Thu Mar 10 2011 Guillaume Rousse <guillomovitch@mandriva.org> 0.60.0-1
-+ Revision: 643382
-- update to new version 0.06
-
-* Sat Dec 25 2010 Shlomi Fish <shlomif@mandriva.org> 0.50.0-1mdv2011.0
-+ Revision: 624762
-- import perl-HTTP-Parser
 
